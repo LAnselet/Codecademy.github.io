@@ -1,0 +1,54 @@
+h1,
+h2 {
+  text-align: center;
+  font-family: Helvetica;
+}
+
+h2 {
+  color: BlueViolet;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: aliceblue;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+th {
+  height: 25px;
+  text-align: left;
+  font-family: Helvetica;
+  background-color: pink;
+  text-transform: capitalize;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+}
+
+.code {
+  font-family: Courier, Monaco, monospace;
+  background-color: white;
+}
+
+thead {
+  background-color: pink;
+  border: 1px 0 1px 0;
+}
+
+.attributes thead {
+  font-weight: bold;
+}
+
+footer {
+  text-align: right;
+  font-family: Helvetica;
+}
