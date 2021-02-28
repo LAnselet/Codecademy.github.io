@@ -43,12 +43,54 @@ const validateCred = (array) => {
 console.log(validateCred(valid1));
 console.log(validateCred(invalid1));
 
-const findValidCards = (nestedArray) => {
+const findValidCards = (cards) => {
+  let invalid = [];
 
+  for(let i = 0; i < cards.length; i++){
+    let currentCred = cards[i];
+    if(!validateCred(currentCred)){
+      invalid.push(currentCred);
+    }
+  }
+  
+  return invalid;
 };
 
+console.log(findValidCards([valid1, valid2, valid3, valid4, valid5]));
+console.log(findValidCards([invalid1, invalid2, invalid3, invalid4, invalid5]));
 
+const idInvalidCardCompanies = (invalidBatch) => {
+  const companies = [];
+  for(let i = 0; i < invalidBatch.length; i++){
+    switch(invalidBatch[i][0]){
+      case 3:
+        if(companies.indexOf('Amex') === -1){
+          companies.push('Amex');
+        }
+        break;
+      case 4:
+        if(companies.indexOf('Visa') === -1){
+          companies.push('Visa');
+        }
+        break;
+      case 5:
+        if(companies.indexOf('Mastercard') === -1){
+          companies.push('Mastercard');
+        }
+        break;
+      case 6:
+        if(companies.indexOf('Discover') === -1){
+          companies.push('Discover');
+        }
+        break;
+      default:
+        console.log('Company not found')
+    }
+  }
+  return companies;
+};
 
+console.log(idInvalidCardCompanies([invalid1]));
 
 
 
