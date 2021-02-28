@@ -24,7 +24,28 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 
 // Add your functions below:
+const validateCred = (array) => {
+  let result = 0;
+  for(let i = array.length-1; i >= 0; i--){
+    let currentValue = array[i];
+    if((array.length - 1 - i) % 2 === 1){
+      currentValue *= 2;
+      if(currentValue >= 9){
+        currentValue -= 9;
+      }
+    }
+    result += currentValue;
+  }
 
+  return result % 10 === 0;
+};
+
+console.log(validateCred(valid1));
+console.log(validateCred(invalid1));
+
+const findValidCards = (nestedArray) => {
+
+};
 
 
 
